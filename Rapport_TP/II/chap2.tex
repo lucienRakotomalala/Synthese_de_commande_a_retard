@@ -1,1 +1,11 @@
 \chapter{Étude d'une commande Proportionnelle-dérivateur}
+
+\section{Équivalence avec retour d'état instantané}
+Pour une loi de commande PI avec comme polynôme $Q(p) = k_1+k_2p+...+k_np^n$ dans la boucle d'asservissement, nous pouvons écrire le développement suivant : 
+\begin{align*}
+\frac{Y(p)}{E(p)} = \frac{G(p)}{1 + Q(p)G(p)} & \Leftrightarrow \frac{Y(p)}{E(p)} = \frac{Y(p)}{U(p) + Q(p)Y(p)}\\
+&\Leftrightarrow \frac{1}{E(p)} = \frac{1}{U(p) + Q(p)Y(p)} \\
+& \Leftrightarrow E(p) = U(p) + Q(p)Y(p)\\
+& \Leftrightarrow U(p) = E(p) - Q(p)Y(p)
+\end{align*} 
+Cette dernière ligne est la caractéristique d'un retour d'état, si et seulement si les états sont disponibles sur la sortie du système.

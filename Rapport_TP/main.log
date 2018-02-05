@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.21)  5 FEB 2018 20:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.21)  5 FEB 2018 20:48
 entering extended mode
 **./main.tex
 (main.tex
@@ -913,7 +913,7 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count194
 
 (page_de_garde/page_de_garde.tex
-<./page_de_garde/logo_ups.png, id=46, 941.76843pt x 304.88907pt>
+<./page_de_garde/logo_ups.png, id=50, 941.76843pt x 304.88907pt>
 File: ./page_de_garde/logo_ups.png Graphic file (type png)
 
 <use ./page_de_garde/logo_ups.png>
@@ -922,14 +922,14 @@ Package pdftex.def Info: ./page_de_garde/logo_ups.png used on input line 11.
 LaTeX Font Info:    Try loading font information for U+rsfs on input line 31.
  ("D:\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) <./page_de_garde/logo_fsi.png, id=48, 383.4325pt x 132.495pt>
+) <./page_de_garde/logo_fsi.png, id=52, 383.4325pt x 132.495pt>
 File: ./page_de_garde/logo_fsi.png Graphic file (type png)
 
 <use ./page_de_garde/logo_fsi.png>
 Package pdftex.def Info: ./page_de_garde/logo_fsi.png used on input line 47.
 (pdftex.def)             Requested size: 164.67969pt x 56.9055pt.
 
-<./page_de_garde/logo_eea.jpg, id=49, 105.39375pt x 124.465pt>
+<./page_de_garde/logo_eea.jpg, id=53, 105.39375pt x 124.465pt>
 File: ./page_de_garde/logo_eea.jpg Graphic file (type jpg)
 
 <use ./page_de_garde/logo_eea.jpg>
@@ -1008,14 +1008,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 20DF285563AF097DFB7BA76EF8D06A9B;632.
+(rerunfilecheck)             Checksum: 692965DE439BAC6F2132EB5E8FB9DF85;730.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
  ) 
 Here is how much of TeX's memory you used:
- 22902 strings out of 493334
- 400187 string characters out of 3145269
- 532344 words of memory out of 3000000
- 25937 multiletter control sequences out of 15000+200000
+ 22909 strings out of 493334
+ 400281 string characters out of 3145269
+ 533761 words of memory out of 3000000
+ 25943 multiletter control sequences out of 15000+200000
  17383 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,10n,96p,476b,519s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1032,10 +1032,14 @@ cti1200.pk> <C:\Users\Lucien\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecxc2074.pk> <C:\Users\Lucien\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
 r\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\Lucien\AppData\Local\MiKTeX\2.9\fon
 ts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Lucien\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk>
-Output written on main.pdf (12 pages, 256502 bytes).
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><D:/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb>
+Output written on main.pdf (12 pages, 315474 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 414 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
