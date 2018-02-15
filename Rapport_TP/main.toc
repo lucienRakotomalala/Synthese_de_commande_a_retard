@@ -1,6 +1,15 @@
 \select@language {french}
 \contentsline {chapter}{Introduction}{1}{chapter*.2}
 \contentsline {chapter}{\numberline {1}Identification-Mod\IeC {\'e}lisation du syst\IeC {\`e}me}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}D\IeC {\'e}termination de param\IeC {\`e}tres et du retard}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Autres m\IeC {\'e}thode}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Mod\IeC {\`e}le fr\IeC {\'e}quentiel}{2}{section.1.3}
+\contentsline {section}{\numberline {1.4}Mod\IeC {\`e}le espace d'\IeC {\'e}tat}{2}{section.1.4}
+\contentsline {section}{\numberline {1.5}Commandabilit\IeC {\'e} et observabilit\IeC {\'e}}{2}{section.1.5}
+\contentsline {section}{\numberline {1.6}Analyse de la boucle ouverte}{2}{section.1.6}
+\contentsline {section}{\numberline {1.7}Stabilit\IeC {\'e} de la boucle ferm\IeC {\'e}e}{2}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}Delay-Sweeping}{2}{subsection.1.7.1}
+\contentsline {subsection}{\numberline {1.7.2}Stabilit\IeC {\'e} 2D}{2}{subsection.1.7.2}
 \contentsline {chapter}{\numberline {2}\IeC {\'E}tude d'une commande Proportionnelle-d\IeC {\'e}rivateur}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}\IeC {\'E}quivalence avec retour d'\IeC {\'e}tat instantan\IeC {\'e}}{3}{section.2.1}
 \contentsline {chapter}{\numberline {3}Placement du spectre Fini}{4}{chapter.3}

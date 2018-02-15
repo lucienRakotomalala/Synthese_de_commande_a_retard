@@ -1,11 +1,20 @@
 \BOOKMARK [0][-]{chapter*.2}{Introduction}{}% 1
 \BOOKMARK [0][-]{chapter.1}{Identification-Mod\351lisation du syst\350me}{}% 2
-\BOOKMARK [0][-]{chapter.2}{\311tude d'une commande Proportionnelle-d\351rivateur}{}% 3
-\BOOKMARK [1][-]{section.2.1}{\311quivalence avec retour d'\351tat instantan\351}{chapter.2}% 4
-\BOOKMARK [0][-]{chapter.3}{Placement du spectre Fini}{}% 5
-\BOOKMARK [0][-]{chapter.4}{\311tude d'un pr\351dicteur de Smith}{}% 6
-\BOOKMARK [0][-]{chapter.5}{Implantation sur le proc\351d\351 r\351el}{}% 7
-\BOOKMARK [-1][-]{part*.3}{Annexes}{}% 8
-\BOOKMARK [0][-]{chapter*.4}{TITRE}{part*.3}% 9
-\BOOKMARK [1][-]{section*.5}{TITRE}{chapter*.4}% 10
-\BOOKMARK [0][-]{chapter*.6}{Annexe 2 - TITRE}{part*.3}% 11
+\BOOKMARK [1][-]{section.1.1}{D\351termination de param\350tres et du retard}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Autres m\351thode}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Mod\350le fr\351quentiel}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Mod\350le espace d'\351tat}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.5}{Commandabilit\351 et observabilit\351}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.6}{Analyse de la boucle ouverte}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.7}{Stabilit\351 de la boucle ferm\351e}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.7.1}{Delay-Sweeping}{section.1.7}% 10
+\BOOKMARK [2][-]{subsection.1.7.2}{Stabilit\351 2D}{section.1.7}% 11
+\BOOKMARK [0][-]{chapter.2}{\311tude d'une commande Proportionnelle-d\351rivateur}{}% 12
+\BOOKMARK [1][-]{section.2.1}{\311quivalence avec retour d'\351tat instantan\351}{chapter.2}% 13
+\BOOKMARK [0][-]{chapter.3}{Placement du spectre Fini}{}% 14
+\BOOKMARK [0][-]{chapter.4}{\311tude d'un pr\351dicteur de Smith}{}% 15
+\BOOKMARK [0][-]{chapter.5}{Implantation sur le proc\351d\351 r\351el}{}% 16
+\BOOKMARK [-1][-]{part*.3}{Annexes}{}% 17
+\BOOKMARK [0][-]{chapter*.4}{TITRE}{part*.3}% 18
+\BOOKMARK [1][-]{section*.5}{TITRE}{chapter*.4}% 19
+\BOOKMARK [0][-]{chapter*.6}{Annexe 2 - TITRE}{part*.3}% 20
