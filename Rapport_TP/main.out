@@ -10,11 +10,12 @@
 \BOOKMARK [2][-]{subsection.1.7.1}{Delay-Sweeping}{section.1.7}% 10
 \BOOKMARK [2][-]{subsection.1.7.2}{Stabilit\351 2D}{section.1.7}% 11
 \BOOKMARK [0][-]{chapter.2}{\311tude d'une commande Proportionnelle-d\351rivateur}{}% 12
-\BOOKMARK [1][-]{section.2.1}{\311quivalence avec retour d'\351tat instantan\351}{chapter.2}% 13
-\BOOKMARK [0][-]{chapter.3}{Placement du spectre Fini}{}% 14
-\BOOKMARK [0][-]{chapter.4}{\311tude d'un pr\351dicteur de Smith}{}% 15
-\BOOKMARK [0][-]{chapter.5}{Implantation sur le proc\351d\351 r\351el}{}% 16
-\BOOKMARK [-1][-]{part*.3}{Annexes}{}% 17
-\BOOKMARK [0][-]{chapter*.4}{TITRE}{part*.3}% 18
-\BOOKMARK [1][-]{section*.5}{TITRE}{chapter*.4}% 19
-\BOOKMARK [0][-]{chapter*.6}{Annexe 2 - TITRE}{part*.3}% 20
+\BOOKMARK [1][-]{section.2.1}{Int\351r\352t de ce correcteur}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{\311quivalence avec retour d'\351tat instantan\351}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{Placement du spectre Fini}{}% 15
+\BOOKMARK [0][-]{chapter.4}{\311tude d'un pr\351dicteur de Smith}{}% 16
+\BOOKMARK [0][-]{chapter.5}{Implantation sur le proc\351d\351 r\351el}{}% 17
+\BOOKMARK [-1][-]{part*.3}{Annexes}{}% 18
+\BOOKMARK [0][-]{chapter*.4}{TITRE}{part*.3}% 19
+\BOOKMARK [1][-]{section*.5}{TITRE}{chapter*.4}% 20
+\BOOKMARK [0][-]{chapter*.6}{Annexe 2 - TITRE}{part*.3}% 21
