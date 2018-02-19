@@ -85,3 +85,13 @@ end % NOGRAPH
  disp('Les racines sont :');
  disp(stab2D);
  
+ 
+ %%
+ hold on 
+ %% syst 1er ordre
+ 
+K   = 1.1;
+tau = .2;
+figure(1)
+    step(3.2*tf([K],[tau 1]))
+    grid on

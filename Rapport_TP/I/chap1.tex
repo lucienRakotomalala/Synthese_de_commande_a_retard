@@ -6,6 +6,16 @@ Un modèle du 1\ier ordre est de la forme suivante :
 \begin{equation}
 G(p) = \frac{K}{\tau p+1}
 \end{equation}
+Où : 
+\begin{description}
+\item[$K$ :] Le gain statique du système.
+\item[$\tau$ :] La constante de temps du système (en seconde).
+\end{description}
+Nous identifierons $K$ en mesurant le gain statique  de la réponse à un signal échelon (pour $t$ tel que la réponse se soit stabilisée): $ K = V_g(t)/U_m(t)$.
+
+
+Pour l'estimation de $\tau$, nous utiliserons la relation suivante : $ \tau = t$ tel que $V_g(t)/U_m(t) = 0,63*K $.\\
+
 Pour identifier le retard, que nous savons être sur la commande du moteur, nous allons étudier de déphasage entre un signal d'entrée de type rectangle à fréquence faible ($1$Hz) et la sortie $V_s(t)$. Nous savons analytiquement qu'un système du premier ordre à un déphasage nul à basse fréquence, donc à partir du déphasage mesuré nous pouvons obtenir le retard.
 
 	\section{Autres méthode}

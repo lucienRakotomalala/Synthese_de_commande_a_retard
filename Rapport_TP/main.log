@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.13)  18 FEB 2018 19:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.13)  19 FEB 2018 11:36
 entering extended mode
 **./main.tex
 (main.tex
@@ -1032,6 +1032,11 @@ Overfull \hbox (13.54893pt too wide) in paragraph at lines 1--1
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <6.49994> not available
 (Font)              size <6> substituted on input line 4.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
 ) (II/chap2.tex [2
 
 ]
@@ -1094,10 +1099,10 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
  ) 
 Here is how much of TeX's memory you used:
- 22973 strings out of 495229
- 413083 string characters out of 3181267
- 528918 words of memory out of 3000000
- 25769 multiletter control sequences out of 15000+200000
+ 22976 strings out of 495229
+ 413145 string characters out of 3181267
+ 529920 words of memory out of 3000000
+ 25772 multiletter control sequences out of 15000+200000
  18835 words of font info for 39 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  62i,10n,96p,511b,519s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1123,9 +1128,9 @@ sers/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
 <C:/Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr7.
 pfb><C:/Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/c
 msy10.pfb>
-Output written on main.pdf (12 pages, 367604 bytes).
+Output written on main.pdf (12 pages, 370960 bytes).
 PDF statistics:
- 572 PDF objects out of 1000 (max. 8388607)
+ 577 PDF objects out of 1000 (max. 8388607)
  33 named destinations out of 1000 (max. 500000)
  188 words of extra memory for PDF output out of 10000 (max. 10000000)
 
