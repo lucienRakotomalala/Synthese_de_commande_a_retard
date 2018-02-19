@@ -4,7 +4,10 @@ Pour établir notre asservissement en position, nous devons faire en sorte de co
 \begin{equation}\label{eqn:correcteurProportionnel}
 C(p) = k_0(1+d_ip)
 \end{equation} 
-avec $k_0$ le gain proportionnel et $d_i$ le gain dérivateur. Avec une telle correction, nous allons diminué l'ordre du transfert de position/consigne et perdre le pôle en 0 menant à l'instabilité. Nous notons pour le procédé étudié le transfert $G(p) = \frac{N(p)}{D(p)}=\frac{N(p)}{p(1+\tau_mp)}$, la boucle fermé avec le correcteur en cours d'étude qui intervient de cette manière : 
+avec $k_0$ le gain proportionnel et $d_i$ le gain dérivateur. Avec une telle correction, nous allons diminué l'ordre du transfert de position/consigne et perdre le pôle en 0 menant à l'instabilité. 
+
+\section{Choix du gain dérivateur du correcteur $C(p)$}
+Passons maintenant au choix des valeurs du correcteur. On nous propose un choix particulier pour $d_i$ dans l'énoncé du TP, nous allons voir ensemble en quoi ce choix est judicieux. Nous notons, pour le procédé étudié le transfert $G(p) = \frac{N(p)}{D(p)}=\frac{N(p)}{p(1+\tau_mp)}$, la boucle fermé avec le correcteur en cours d'étude qui intervient de cette manière : 
 \begin{align*}
 G_{bf}(p) = \frac{Y(p)}{Y_{ref}}	&= \frac{C(p)G(p)}{1+C(p)G(p)} 
 										= \frac{k_0(1+d_ip) \frac{N(p)}{D(p)}}{1+k_0(1+d_ip) \frac{N(p)}{D(p)}}	\\
@@ -16,6 +19,9 @@ G_{bf} = \frac{k_0 N(p)}{p+k_0N(p)}
 \end{equation}
 
 En sachant que N(p) contient $e^{-hp}$, nous voyons qu'avec ce correcteur, nous allons pouvoir manipuler l'influence du retard dans le système à l'aide $k_0$.
+
+\section{Choix du gain proportionnel du correcteur $C(p)$}
+ 
 \section{Équivalence avec retour d'état instantané}
 Pour une loi de commande PI avec comme polynôme $Q(p) = k_1+k_2p+...+k_np^n$ dans la boucle d'asservissement, nous pouvons écrire le développement suivant : 
 \begin{align*}
