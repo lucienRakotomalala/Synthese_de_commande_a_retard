@@ -1,5 +1,6 @@
 \chapter{Étude d'une commande Proportionnelle-dérivateur}
-
+\section{Intérêt de ce correcteur}
+Pour établir notre asservissement en position, nous devons faire en sorte de commander le transfert entre $u_m$ et $V_s$. Ce transfert dispose d'un intégrateur pur et d'un pôle en $-\frac{1}{\tau _m}$, qui donnent ainsi notre position instable.	
 \section{Équivalence avec retour d'état instantané}
 Pour une loi de commande PI avec comme polynôme $Q(p) = k_1+k_2p+...+k_np^n$ dans la boucle d'asservissement, nous pouvons écrire le développement suivant : 
 \begin{align*}
