@@ -2,7 +2,9 @@
 % M2 - ISTR - Semestre 2
 % Lucien Rakotomalala - David Tocaven
 %% Fichier contenant les paramères
+close all
 clear
+
 % Parametres Moteur
 km      =   10;
 taum    =   0.3;
