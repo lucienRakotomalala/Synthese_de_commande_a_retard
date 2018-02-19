@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.13)  19 FEB 2018 11:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.13)  19 FEB 2018 15:57
 entering extended mode
 **./main.tex
 (main.tex
@@ -1033,7 +1033,7 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <6.49994> not available
 (Font)              size <6> substituted on input line 4.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
 
  []
 
@@ -1123,14 +1123,15 @@ s\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\David\AppData\Local\MiKTe
 X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\David\AppData\L
 ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Users/David/
 AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/
-David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/U
-sers/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-<C:/Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr7.
-pfb><C:/Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/c
-msy10.pfb>
-Output written on main.pdf (12 pages, 370960 bytes).
+David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/U
+sers/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
+<C:/Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr10
+.pfb><C:/Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/
+cmr7.pfb><C:/Users/David/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb>
+Output written on main.pdf (12 pages, 380114 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
+ 581 PDF objects out of 1000 (max. 8388607)
  33 named destinations out of 1000 (max. 500000)
  188 words of extra memory for PDF output out of 10000 (max. 10000000)
 
