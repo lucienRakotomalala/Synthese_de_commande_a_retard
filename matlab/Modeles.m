@@ -87,11 +87,12 @@ end % NOGRAPH
  
  
  %%
- hold on 
  %% syst 1er ordre
  
 K   = 1.1;
 tau = .2;
-figure(1)
+if (NOGRAPH ~=1)
+    figure(1)
     step(3.2*tf([K],[tau 1]))
     grid on
+end
