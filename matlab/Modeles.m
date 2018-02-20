@@ -5,9 +5,9 @@
 Parametres;
 NOGRAPH = 1;
 %% Fonctions de Transferts
-m.ftVg  =   tf([kg*km] , [taum , 1],...
+m.ftVg  =   tf(kg*km , [taum , 1],...
                 'InputDelay',h);
-m.ftVs  =   tf([ks*km*kr] , [taum , 1 , 0],...
+m.ftVs  =   tf(ks*km*kr , [taum , 1 , 0],...
                 'InputDelay',h);
 
 %% Espace d'état
@@ -94,7 +94,7 @@ K   = 1.1;
 tau = .2;
 if (NOGRAPH ~=1)
     figure(1)
-    step(3.2*tf([K],[tau 1]))
+    step(3.2*tf(K,[tau 1]))
     grid on
 end
  %% Controlabilité & Observabilité

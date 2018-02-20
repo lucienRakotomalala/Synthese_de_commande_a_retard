@@ -1,12 +1,15 @@
 % TP - Synthèse d'une commande à retard - Application à un procédé électro-mécanique
 % M2 - ISTR - Semestre 2
 % Lucien Rakotomalala - David Tocaven
-% Fichiers Contenant les paramètres et les modèles du procédé
+% Fichiers Contenant le correcteur proportionnel derivé
 Modeles
     
 %% Parametres du correcteur
+Tr_desirer = 8;
+tauBF = (Tr_desirer -h )/3;
+%%
 % Gain proportionnel
-k0 = 1/(2.42*ks*kr*km);
+k0 = 1/(tauBF*ks*kr*km);
 %Gain dérivateur 
 di = taum;
 
@@ -20,10 +23,11 @@ corPD = tf([di k0],1);
 
 
 ome = k0*ks*kr*km;
-atan((k0*ks*kr*km)/(i*ome))
+a   = atan((k0*ks*kr*km)/(i*ome));
 
 %% Affichage 
-figure(4)
+save('VgCorPD.mat','VgCorPD')
+fig4=figure(4);
     plot(VgCorPD.time,[0 ;ones(length(VgCorPD.time)-1,1)],... % ref
          VgCorPD.time,.95*ones(size(VgCorPD.time)),... % 95% Pour le temps de réponse
          VgCorPD.time,.63*ones(size(VgCorPD.time)),... % 63% pour tau => Temps de monté
@@ -32,6 +36,16 @@ figure(4)
     legend('U_m(t)','95%','63%','Vg(t) BF')
     title('Réponse à un échelon unité en BF avec un PD')
     axis([-.5 20 0 1.1])
+    %%
+    savefig('fig4.fig','fig4')
 %% Tr 95%
-Tr95 = mean([7.229 7.29])
+Tr95 =7.805;
+
+syms p;
+syms ksf;
+solve(taum*p^2+p+ksf*km*kr*ks==0,ksf)
+
+%% 
+
+
 
