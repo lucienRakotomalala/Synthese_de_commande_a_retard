@@ -45,7 +45,21 @@ syms p;
 syms ksf;
 solve(taum*p^2+p+ksf*km*kr*ks==0,ksf)
 
-%% 
+%% Version par simplication
 
+mPD.BO = tf(k0*ks*kr*km ,[1 0],...
+           'InputDelay',h);
+
+mPD.BF = feedback(mPD.BO,1);
+
+
+figure(5) 
+    step(mPD.BF)
+    grid on
+    title('Réponse à un échelon unité en BF, avec un correcteur PD')
+    
+%%
+mPD.stepinf = stepinfo(mPD.BF,'SettlingTimeThreshold',.05)
+fprintf('Temps de réponse : %f secondes\n',mPD.stepinf.SettlingTime);
 
 

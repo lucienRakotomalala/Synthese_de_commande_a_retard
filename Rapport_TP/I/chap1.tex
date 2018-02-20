@@ -15,8 +15,28 @@ Où :
 \noindent Nous identifierons $K$ en mesurant le gain statique  de la réponse à un signal échelon (pour $t$ tel que la réponse se soit stabilisée): $ K = V_g(t)/U_m(t)$.\\
 \noindent Pour l'estimation de $\tau$, nous utiliserons la relation suivante : $ \tau = t$ lorsque $\frac{V_g(t)}{U_m(t)} = 0,63*K $.\\
 
-Pour identifier le retard, que nous savons être sur la commande du moteur, nous allons étudier de déphasage entre un signal d'entrée de type rectangle à fréquence faible ($1$Hz) et la sortie $V_s(t)$. Nous savons analytiquement qu'un système du premier ordre à un déphasage nul à basse fréquence, donc à partir du déphasage mesuré nous pouvons obtenir le retard.
+Cette méthode nous a permis d'obtenir l'estimation suivante des paramètres : 
+\begin{equation}
+\left\lbrace
+\begin{array}{lll}
+k_m &=&  9,6048\\
+\tau_m &=& 0,2533 \text{ secondes}
+\end{array}\right.
+\end{equation}
 
+
+\begin{figure}[!ht]
+\begin{minipage}[t]{.5\textwidth}
+\begin{flushleft}
+Pour identifier le retard, que nous savons être présent sur la commande du moteur, nous avons mesurer le décalage temporel entre le début d'un échelon unité que l'on injecte en entrée $U_m(t)$ du moteur et la sortie $V_g(t)$. Ce décalage représente le retard du système, le temps qu'il met avant de réagir à une modification de l'entrée (voir figure \ref{fig:retardVg}).
+\end{flushleft}
+\end{minipage}%
+\begin{minipage}[c]{.5\textwidth}
+\centering
+\includegraphics[width=\textwidth]{./I/images/retardVg.pdf}
+\caption{\label{fig:retardVg} Mesure du retard.}
+\end{minipage}
+\end{figure}
 	\section{Autres méthode}
 Une autre façon de modéliser le modèle du moteur est un approche de type \emph{boite blanche}, c'est-à-dire de créer un modèle du moteur à partir d'une étude physique du système. 
 	\section{Modèle fréquentiel}
@@ -125,6 +145,7 @@ Nous avons comparé les réponses entres les deux modélisations afin de vérifi
 \end{figure}
 Nous pouvons constater que l'erreur est négligeable et doit être dût à du bruit numérique et/ou à la méthode de calcul de la réponse. Nos modèles sont donc équivalents par rapport à une réponse à un échelon unité.
 	\section{Commandabilité et observabilité}
+
 Nous allons maintenant étudier l'observabilité et la commandabilité de notre modèle. Nous utiliserons, pour cela, le modèle espace d'état et matlab pour résoudre ce point. Nous avons vérifié que le rang de la matrice de commandabilité et de celle d'observabilité sont bien égaux à la dimension de $A$. Ces calculs nous permettent de conclure que le système est observable et commandable.
 	\section{Analyse de la boucle ouverte}
 Nous allons maintenant étudier les performances de notre système. Nous avons choisi d'étudier les performances sur la sortie $V_g(t)$. 

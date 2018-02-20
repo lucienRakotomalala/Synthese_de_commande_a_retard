@@ -80,6 +80,13 @@ figure(3)
 figure(4)
   h=  lsim(m.ee,u,t);
     grid on
+%%    
+figure(5)
+   step(m.ftVg)
+   title('Retard du modèle')
+    legend( 'V_g(t)')
+    %axis([0 .01 0 3])    
+    grid on
 end % NOGRAPH    
  %% Etude de stabilité - méthode 2D - calcul des racines 
  stab2D =roots([taum^2, 0 , - 1,0, (ks*km*kg)^2]);
