@@ -3,7 +3,7 @@
 % Lucien Rakotomalala - David Tocaven
 % Fichier contenant les modèles du procédé
 Parametres;
-NOGRAPH = 1;
+NOGRAPH = 0;
 %% Fonctions de Transferts
 m.ftVg  =   tf([kg*km] , [taum , 1],...
                 'InputDelay',h);
