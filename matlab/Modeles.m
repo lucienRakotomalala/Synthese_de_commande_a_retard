@@ -5,9 +5,9 @@
 Parametres;
 NOGRAPH = 1;
 %% Fonctions de Transferts
-m.ftVs  =   tf([ks*km*kr] , [taum , 1 , 0],...
-                'InputDelay',h);
 m.ftVg  =   tf([kg*km] , [taum , 1],...
+                'InputDelay',h);
+m.ftVs  =   tf([ks*km*kr] , [taum , 1 , 0],...
                 'InputDelay',h);
 
 %% Espace d'état
@@ -39,6 +39,7 @@ m.ee = ss(m.A,m.B,m.C,m.D,'InputDelay',h);
 %% Affichages
 % Fonctions de transfers
 if(NOGRAPH ~= 1)
+ %%
 figure(1)
     % fts
     subplot(2,1,1)
@@ -86,7 +87,7 @@ end % NOGRAPH
  disp(stab2D);
  
  
- %%
+
  %% syst 1er ordre
  
 K   = 1.1;
@@ -96,3 +97,9 @@ if (NOGRAPH ~=1)
     step(3.2*tf([K],[tau 1]))
     grid on
 end
+ %% Controlabilité & Observabilité
+ disp('Le modèle est commandable (1/0) :')    
+ disp(rank(ctrb(m.ee)) == length(m.A))
+ 
+disp('Le modèle est observable (1/0) :')    
+ disp(rank(obsv(m.ee))==length(m.A))     

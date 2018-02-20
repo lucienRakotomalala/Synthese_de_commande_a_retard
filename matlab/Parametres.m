@@ -6,8 +6,9 @@ close all
 clear
 
 % Parametres Moteur
-km      =   10;
-taum    =   0.3;
+km      =   9.6048; %10;
+taum    =   0.2533 ; %0.3;
+
 % Parametre maquette
 kg      =   0.105;
 ks      =   10;
