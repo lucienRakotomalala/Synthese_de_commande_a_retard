@@ -23,10 +23,10 @@ En sachant que N(p) contient $e^{-hp}$, nous voyons qu'avec ce correcteur, nous 
 \section{Choix du gain proportionnel du correcteur $C(p)$}
 Maintenant que les calculs théoriques du correcteur ont été effectué, nous allons passer à la recherche du gain proportionnel $k_0$. Pour cela, nous allons à nous référencer aux contraintes du cahier des charges vu en Introduction. Si l'on décompose le résultat établi en \ref{eqn:boucleFermeC_PD}, il vient comme représentation de Laplace du système en boucle fermé :
 \begin{equation}
-G_{bf} = \frac{k_0k_gk_sk_me^{-hp}}{p+k_0k_gk_sk_me^{-hp}}
+G_{bf} = \frac{k_0k_rk_sk_me^{-hp}}{p+k_0k_rk_sk_me^{-hp}}
 \end{equation}
 Il devient donc évident que l'étude de cette boucle fermé passe par l'étude du quasi-polynôme définit par \begin{equation}\label{eqn:quasipolynome_CPD}
-p+k_0k_gk_sk_me^{-hp}=0
+p+k_0k_rk_sk_me^{-hp}=0
 \end{equation}
 
 \paragraph*{Valeur du gain proportionnel}
@@ -37,16 +37,37 @@ G(p) = \frac{K}{1+\tau p} &\text{ avec }t_r \text{ le temps de réponse } = 3.3\
 en notant tout de même que notre temps de réponse doit être établi à partir du retard du système : $t_r + h \leq 8$. Nous obtenons donc, avec une application numérique : $\tau \leq \frac{8-h}{3.3} \Leftrightarrow \tau \leq 2.42$ et $K=1$. 
 Pour une identification de ces paramètres, nous prenons la fonction de transfert en boucle fermé que nous réécrivons pour correspondre avec la forme présentée précédemment : 
 \begin{equation}
-G_{bf} = \frac{1}{\frac{1}{k_0k_gk_sk_me^{-hp}}p+1}
+G_{bf} = \frac{1}{\frac{1}{k_0k_rk_sk_me^{-hp}}p+1}
 \end{equation} 
-Il vient donc : $\frac{1}{k_0k_gk_sk_me^{-hp}} < 2.42 \Leftrightarrow k_0 > \frac{1}{2.42k_gk_sk_me^{-hp}}$
+Il vient donc : $\frac{1}{k_0k_rk_sk_me^{-hp}} < 2.42 \Leftrightarrow k_0 > \frac{1}{2.42k_rk_sk_me^{-hp}}$
 
 
 \paragraph*{Retard Admissible}
 Pour cette étude, nous allons aborder plusieurs approches. Une première, analytique, qui va consister à étudier le quasi-polynôme de la fonction de transfert en boucle fermé établi en `\ref{eqn:quasipolynome_CPD}. La seconde sera plus applicative, nous allons utiliser des tracés fréquentiels et aussi temporels pour analyser nos résultats.
 
 
-Nous allons utiliser la méthode du \emph{Delay Sweeping} pour connaitre le retard admissible de notre système boucle fermé. Celui ci 
+Nous allons utiliser la méthode du \emph{Delay Sweeping} pour connaitre le retard admissible de notre système en boucle fermé. Pour cela,nous posons :
+\begin{equation}\label{eqn:delaySweepingCorPD}
+\frac{Q(j\omega)}{P(j\omega)} = \frac{k_0k_sk_mk_r}{j\omega} 
+\end{equation}
+On obtient alors, pour le calcul du module :
+\begin{align}
+\norm{\frac{Q(j\omega)}{P(j\omega)}} 	&= \norm{\frac{k_0k_sk_mk_r}{j\omega}} = 1\\
+\end{align}
+qui donne alors : 
+\begin{align*}
+\omega= k_0k_sk_mk_R
+\end{align*}
+Nous appliquons ensuite ce résultat sur le calcul de l'argument suivant pour pouvoir en extraire le retard maximum accessible : 
+\begin{align}
+&wh^* = -arg\left(-\frac{Q(j\omega)}{P(j\omega)}\right)+2\pi k,\ k \in  \mathbb{Zcircle ()}
+\end{align}
+qui nous donne :
+\begin{align*}
+h^* &= \frac{1}{\omega}arg\left(-\frac{k_0k_sk_rk_m}{j\omega}\right)\\
+	&= \frac{1}{\omega}arg(-1)	- arg(j)\ \ \text{     car nous avons noté : } \omega = k_0k_sk_rk_m\\
+	&= \frac{\pi}{2 \omega}
+\end{align*}
 \section{Équivalence avec retour d'état instantané}
 Pour une loi de commande PD avec comme polynôme $Q(p) = k_1+k_2p+...+k_np^n$ dans la boucle d'asservissement, nous pouvons écrire le développement suivant : 
 \begin{align*}
