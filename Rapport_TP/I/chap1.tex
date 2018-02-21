@@ -217,33 +217,84 @@ Toujours à l'aide de matlab, nous avons obtenu les performances suivantes :
 \end{description}	
 	\section{Stabilité de la boucle fermée}
 Nous allons maintenant étudier la stabilité de la boucle fermée par deux méthodes : le \emph{Delay-sweeping} et l'étude de la \emph{stabilité 2D}. Avant cela, nous allons donner les fonctions de transferts en boucle fermée du système. 
-[equations a faire. ]
 \begin{equation}
 \left\lbrace
 \begin{array}{lcl}
-\frac{V_s()}{u_m(t)}	&=&	\frac{1}{3}\\
-\frac{V_g()}{u_m(t)}	&=&	\frac{1}{3}
+\frac{V_s()}{u_m(t)}	&=&	\frac{e^{-hp}k_m*k_r*k_s }{\tau_m *p^2 + p + e^{-hp}k_m*k_r*k_s }\\
+\frac{V_g()}{u_m(t)}	&=&	\frac{e^{-hp}k_m*k_g }{\tau_m p + 1 + e^{-hp}k_m*k_g }
 \end{array}
 \right.
 \end{equation}
-
+Nous avons aussi simulé la boucle fermé sans correction sur simulink, figure \ref{fig:simulink_BFsimple} et voici la réponse à un échelon unité, figure \ref{fig:plot_BFsimple}. Sur $V_s(t)$, nous pouvons observer beaucoup d'oscillations, du dépassement, un temps de convergence assez important et une erreur statique nulle. 
 \begin{figure}[!ht]
-\begin{minipage}{.5\textwidth}
-\centering
-\includegraphics[width=.8\textwidth]{./I/images/BFsimple_simulink.pdf}
-\caption{\label{fig:simulink_BFsimple}Modèle SIMULINK du système en boucle fermé sans correcteur.}
-\end{minipage}\hfill
-\begin{minipage}{.5\textwidth}
-\centering
-\includegraphics[width=.8\textwidth]{./I/images/BFsimple_plot.pdf}
-\caption{\label{fig:plot_	BFsimple}Tracé de la réponse à un échelon unité du système en boucle fermé sans correcteur.}
-\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\textwidth]{./I/images/BFsimple_simulink.pdf}
+		\caption{\label{fig:simulink_BFsimple}Modèle SIMULINK du système en boucle fermé sans correcteur.}
+	\end{minipage}\hfill
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\textwidth]{./I/images/BFsimple_plot.pdf}
+		\caption{\label{fig:plot_BFsimple}Tracé de la réponse à un échelon unité du système en boucle fermé sans correcteur.}
+	\end{minipage}
 \end{figure}
 		\subsection{Delay-Sweeping}
+Nous allons étudier la stabilité à l'aide de la méthode du \emph{Delay-sweeping}. 
+Nous allons décomposer le quasi-polynôme caractéristique de la fonction de transfert $\frac{V_s()}{u_m(t)}$ en deux. Une partie contenant la partie du quasi-polynôme indépendante du retard $P(p)$ et la seconde partie ceux qui dépendent du retard $Q(p)$. Afin d'analyser la stabilité, nous allons calculer le module et l'argument de l'équation suivante (où $p=j\omega$) :
+\begin{equation}
+P(j\omega) + Q(j\omega) e^{-j \omega h}  =0
+\end{equation}
+Nous avons identifier, sur la fonction de transfert concernée, $P(p)$ et $Q(p)$ :
+\begin{equation}
+\left\lbrace
+\begin{array}{lcl}
+P(p) &=& \tau_m p^2 + p\\
+Q(p) &=& k_m*k_s*k_r
+\end{array}\right.
+\Leftrightarrow
+\left\lbrace
+\begin{array}{lcl}
+P(p) &=& -\tau_m \omega^2 + j\omega \\
+Q(p) &=& k_m*k_s*k_r
+\end{array}\right.
+\end{equation}
+Voici le module et l'argument : 
 
 
-		
+\begin{minipage}{.48\textwidth}
+\begin{equation}
+\begin{array}{rlcl}
+&\norm{\frac{Q(j\omega)}{P(j\omega)}} &=& 1 \\
+\Leftrightarrow & \frac{k_m*k_s*k_r}{ \sqrt{(-\tau_m \omega^2)^2 + \omega^2}} &=& 1\\
+\Leftrightarrow & \tau_m^2 \omega^4 + \omega^2 -(k_m*k_r*k_s)^2 &=& 0\\
+\Leftrightarrow & \omega &=& \left\lbrace\begin{matrix}
+-5.9206 \\
+7.1161*i\\
+- 7.1161*i\\
+5.9206
+\end{matrix}\right.\\
+\Leftrightarrow & \omega &=& 5.9206 \text{ rad/sec}
+\end{array}
+\end{equation}
+\end{minipage} \vline 
+\begin{minipage}{.48\textwidth}
+\begin{equation}
+\begin{array}{rlcl}
+&\overline{h}\omega &=& arg\left(\frac{Q(j\omega)}{P(j\omega)}\right) + 2*k*\pi\\
+\Leftrightarrow & \overline{h}\omega  &=& \text{A finir !!!! }\\
+\Leftrightarrow & \overline{h}\omega &=& 0\\
+\Leftrightarrow & \overline{h}\omega  &=& \left\lbrace\begin{matrix}
+-5.9206 \\
+7.1161*i\\
+- 7.1161*i\\
+5.9206
+\end{matrix}\right.\\
+\Leftrightarrow & \omega &=& 5.9206 \text{ rad/sec}
+\end{array}
+\end{equation}
+\end{minipage}
+
 		\subsection{Stabilité 2D}
-		
+
 
 

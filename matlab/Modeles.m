@@ -105,6 +105,15 @@ if (NOGRAPH ~=1)
     grid on
 end
  %% Controlabilité & Observabilité
+ syms nabla
+%Co = [B , A*B];
+Co = [  0               , (km*kr*nabla)/taum;
+        (km*nabla)/taum , -(km*nabla)/taum^2];
+%O = [ C ; C*A];
+O = [   0   ,   kg;
+        ks  ,   0;
+        0   ,   -kg/taum;
+        0   ,	kr*ks];
  disp('Le modèle est commandable (1/0) :')    
  disp(rank(ctrb(m.ee)) == length(m.A))
  
@@ -126,5 +135,7 @@ if (NOGRAPH ~=1)
 end
 
 
- 
+ %% Stabilité par Delay-sweeping 
+
+roots([taum^2 0 1 0 -(km*ks*kr)^2])
  

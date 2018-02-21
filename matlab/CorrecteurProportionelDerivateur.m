@@ -19,8 +19,9 @@ corPD = tf([di k0],1);
 %% Boucle fermé
 % Vitesse disponible sur la 2nd sortie de ee
 systemeBoucleFerme = feedback(m.ee(2)*corPD,1);
-nyquist(systemeBoucleFerme)
-
+if(NOGRAPH ~=1)
+    nyquist(systemeBoucleFerme)
+end
 
 ome = k0*ks*kr*km;
 a   = atan((k0*ks*kr*km)/(i*ome));
@@ -52,14 +53,15 @@ mPD.BO = tf(k0*ks*kr*km ,[1 0],...
 
 mPD.BF = feedback(mPD.BO,1);
 
-
-figure(5) 
-    step(mPD.BF)
-    grid on
-    title('Réponse à un échelon unité en BF, avec un correcteur PD')
-    
+if (NOGRAPH ~=1)
+    figure(5) 
+        step(mPD.BF)    
+        grid on
+        title('Réponse à un échelon unité en BF, avec un correcteur PD')
+end
 %%
 mPD.stepinf = stepinfo(mPD.BF,'SettlingTimeThreshold',.05)
 fprintf('Temps de réponse : %f secondes\n',mPD.stepinf.SettlingTime);
-
+%%
+m.ftBF = feedback(m.ftVs,1)
 
