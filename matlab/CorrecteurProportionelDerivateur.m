@@ -18,8 +18,8 @@ corPD = tf([di k0],1);
 
 %% Boucle fermé
 % Vitesse disponible sur la 2nd sortie de ee
-%systemeBoucleFerme = feedback(m.ee(2)*corPD,1);
-%bode(systemeBoucleFerme)
+systemeBoucleFerme = feedback(m.ee(2)*corPD,1);
+nyquist(systemeBoucleFerme)
 
 
 ome = k0*ks*kr*km;

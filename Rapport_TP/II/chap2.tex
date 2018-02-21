@@ -20,9 +20,10 @@ G_{bf} = \frac{k_0 N(p)}{p+k_0N(p)}
 
 En sachant que N(p) contient $e^{-hp}$, nous voyons qu'avec ce correcteur, nous allons pouvoir manipuler l'influence du retard dans le système à l'aide $k_0$ et placer le pôle de la boucle fermé corrigé où nous le souhaitons.
 
+\paragraph*{Valeur du gain dérivateur : }\underline{Application numérique} : $d_i = 0.2533$
 \section{Choix du gain proportionnel du correcteur $C(p)$}
 Maintenant que les calculs théoriques du correcteur ont été effectué, nous allons passer à la recherche du gain proportionnel $k_0$. Pour cela, nous allons à nous référencer aux contraintes du cahier des charges vu en Introduction. Si l'on décompose le résultat établi en \ref{eqn:boucleFermeC_PD}, il vient comme représentation de Laplace du système en boucle fermé :
-\begin{equation}
+\begin{equation}\label{eqn:boucleFermeC_PD_detaillé}
 G_{bf} = \frac{k_0k_rk_sk_me^{-hp}}{p+k_0k_rk_sk_me^{-hp}}
 \end{equation}
 Il devient donc évident que l'étude de cette boucle fermé passe par l'étude du quasi-polynôme définit par \begin{equation}\label{eqn:quasipolynome_CPD}
@@ -39,12 +40,11 @@ Pour une identification de ces paramètres, nous prenons la fonction de transfer
 \begin{equation}
 G_{bf} = \frac{1}{\frac{1}{k_0k_rk_sk_me^{-hp}}p+1}
 \end{equation} 
-Il vient donc : $\frac{1}{k_0k_rk_sk_me^{-hp}} < 2.42 \Leftrightarrow k_0 > \frac{1}{2.42k_rk_sk_me^{-hp}}$
+Il vient donc : $\frac{1}{k_0k_rk_sk_me^{-hp}} < 2.42 \Leftrightarrow k_0 > \frac{1}{2.42k_rk_sk_me^{-hp}}$. 
 
-
+\paragraph*{Valeur gain proportionnel : }\underline{Application numérique} : $k_0 = 0.0354$
 \paragraph*{Retard Admissible}
-Pour cette étude, nous allons aborder plusieurs approches. Une première, analytique, qui va consister à étudier le quasi-polynôme de la fonction de transfert en boucle fermé établi en `\ref{eqn:quasipolynome_CPD}. La seconde sera plus applicative, nous allons utiliser des tracés fréquentiels et aussi temporels pour analyser nos résultats.
-
+Pour cette étude, nous allons aborder l'étude du quasi-polynôme de la fonction de transfert en boucle fermé établi en `\ref{eqn:quasipolynome_CPD}. 
 
 Nous allons utiliser la méthode du \emph{Delay Sweeping} pour connaitre le retard admissible de notre système en boucle fermé. Pour cela,nous posons :
 \begin{equation}\label{eqn:delaySweepingCorPD}
@@ -56,11 +56,11 @@ On obtient alors, pour le calcul du module :
 \end{align}
 qui donne alors : 
 \begin{align*}
-\omega= k_0k_sk_mk_R
+\omega= k_0k_sk_mk_r
 \end{align*}
 Nous appliquons ensuite ce résultat sur le calcul de l'argument suivant pour pouvoir en extraire le retard maximum accessible : 
 \begin{align}
-&wh^* = -arg\left(-\frac{Q(j\omega)}{P(j\omega)}\right)+2\pi k,\ k \in  \mathbb{Zcircle ()}
+&wh^* = -arg\left(-\frac{Q(j\omega)}{P(j\omega)}\right)+2\pi k,\ k \in  \mathbb{Z}
 \end{align}
 qui nous donne :
 \begin{align*}
@@ -68,6 +68,27 @@ h^* &= \frac{1}{\omega}arg\left(-\frac{k_0k_sk_rk_m}{j\omega}\right)\\
 	&= \frac{1}{\omega}arg(-1)	- arg(j)\ \ \text{     car nous avons noté : } \omega = k_0k_sk_rk_m\\
 	&= \frac{\pi}{2 \omega}
 \end{align*}
+
+\paragraph*{Valeur retard admissible : }\underline{Application numérique} : $h \in [0; 4.15]$
+\section{Calcul de l'erreur de position} 
+Avec cette partie, nous pourrons établir l'ajout d'un gain de pré-compensation. Seulement, il vient par construction de l'asservissement la fonction de transfert de la boucle fermé trouvée en \ref{eqn:boucleFermeC_PD_detaillé}. Nous appliquons alors le théorème de la valeur finalesur la sortie du système pour obtenir la valeur du régime permanent. Cette valeur sera ensuite comparé avec la référence (si la référence est égale, tout est bon). Nous avons :
+\begin{align*}
+\underset{t\rightarrow \infty}{\lim}\ y(t) 	&= \underset{ p\rightarrow 0 }{lim} \ p(Y(p))\\
+  											&= \underset{p\rightarrow 0}{lim}\ p(G_{bf}(p)Y_{ref}(p)\\
+  											&= \underset{p\rightarrow 0}{lim}\ p \left(\frac{k_0k_rk_sk_me^{-hp}}{p+k_0k_rk_sk_me^{-hp}} \frac{y_{ref}}{p}\right)
+\end{align*}
+La simplification des variables de Laplace et l'application de leur limite donnent un résultat pour le moins assez trivial qui est :
+\begin{align*}
+\underset{p\rightarrow 0}{\lim}\ Y(p) = y_{ref}
+\end{align*}
+donc, nous pouvons conclure sur l'erreur de position en disant : 
+\begin{equation}
+\underset{t \rightarrow \infty}{lim}\ \epsilon(t) = y(t) - y_{ref}(t) = 0
+\end{equation}
+
+\section{Simulation}
+
+
 \section{Équivalence avec retour d'état instantané}
 Pour une loi de commande PD avec comme polynôme $Q(p) = k_1+k_2p+...+k_np^n$ dans la boucle d'asservissement, nous pouvons écrire le développement suivant : 
 \begin{align*}
