@@ -87,7 +87,37 @@ donc, nous pouvons conclure sur l'erreur de position en disant :
 \end{equation}
 
 \section{Simulation \emph{Matlab / Simulink}}
-Il nous est maintenant possible de simuler notre commande. Nous avons choisi de faire cette partie avec \emph{Simulink} pour une analyse plus complète et facile des signaux envoyé et 
+Nous avons pour cette partie établi plusieurs simulaions de la correction. Un premier modèle a été effectué avec \emph{Matlab} en ligne de commande. Il vous est donné ci-dessous :
+\begin{lstlisting}
+mPD.BO = tf(k0*ks*kr*km ,[1 0],...
+           'InputDelay',h);
+
+mPD.BF = feedback(mPD.BO,1);
+\end{lstlisting}
+Nous y créons donc une fonction de transfert de Boucle ouverte qui est $G_{BO}(p) = \frac{k_0k_sk_mk_re^{-hp}}{p}$ que nous rebouclons avec la commande \emph{feedback}. Le résultat du transfert obtenu est présenté dans le \emph{step} suivant (\ref{fig:repEchelonSimple})
+\begin{figure}[!ht]
+\centering
+\includegraphics[width = .7\textwidth]{./II/images/rep_echelon_BF_simple.pdf}
+\caption{Réponse à un échelon unité en BF, avec un correcteur PD}\label{fig:repEchelonSimple}
+\end{figure}	
+
+
+Nous avons réalisé une meilleure simulation, avec un fichier \emph{Simulink} danslequel nous avons relevé les signaux de sorties et d'amplitudes. Vous trouverez ces résultats aux figures \ref{fig:comEchelon} et \ref{fig:repEchelon}.
+\begin{figure}[!ht]
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width = \textwidth]{./II/images/commandePD.pdf}
+\caption{Signal de commande envoyée \emph{Simulink}}\label{fig:comEchelon}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width = \textwidth]{./II/images/rep_echelon_BF.pdf}
+\caption{Réponse à un échelon unité en BF avec un PD \emph{Simulink}}\label{fig:repEchelon}
+\end{minipage}
+\end{figure}
+
+\paragraph*{Conclusion Résultats} Nous avons bien le temps de réponse demandé dans le cahier des charges, ainsi que l'absence d'oscillations et dépassement. Le placement d'un tel correcteur nous permet de satisfaire le cahier des charges mais le retard admissibles est lui, assez faible. Nous verrons dans les parties suivantes si des correcteurs mieux adaptés aux systèmes à retards sont possibles.
+
 
 \section{Équivalence avec retour d'état instantané}
 Pour une loi de commande PD avec comme polynôme $Q(p) = k_1+k_2p+...+k_np^n$ dans la boucle d'asservissement, nous pouvons écrire le développement suivant : 
