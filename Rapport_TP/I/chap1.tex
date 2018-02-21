@@ -261,7 +261,7 @@ Q(p) &=& k_m*k_s*k_r
 Voici le module et l'argument : 
 
 
-\begin{minipage}{.48\textwidth}
+\noindent\begin{minipage}[ ]{.5\textwidth}
 \begin{equation}
 \begin{array}{rlcl}
 &\norm{\frac{Q(j\omega)}{P(j\omega)}} &=& 1 \\
@@ -280,16 +280,12 @@ Voici le module et l'argument :
 \begin{minipage}{.48\textwidth}
 \begin{equation}
 \begin{array}{rlcl}
-&\overline{h}\omega &=& arg\left(\frac{Q(j\omega)}{P(j\omega)}\right) + 2*k*\pi\\
-\Leftrightarrow & \overline{h}\omega  &=& \text{A finir !!!! }\\
-\Leftrightarrow & \overline{h}\omega &=& 0\\
-\Leftrightarrow & \overline{h}\omega  &=& \left\lbrace\begin{matrix}
--5.9206 \\
-7.1161*i\\
-- 7.1161*i\\
-5.9206
-\end{matrix}\right.\\
-\Leftrightarrow & \omega &=& 5.9206 \text{ rad/sec}
+&\overline{h}\omega &=& arg\left(-\frac{Q(j\omega)}{P(j\omega)}\right) + 2k\pi\\
+\Leftrightarrow & \overline{h}\omega  &=& arg\left(-km*kr*ks \right) - arg\left( -\tau_m \omega^2 + j\omega \right) + 2k\pi\\
+\Leftrightarrow & \overline{h}\omega &=& -\pi - 1,588\pi + 2k\pi\\
+\Leftrightarrow & \overline{h} &=& 0,0993\pi\\
+\Leftrightarrow & \overline{h} &=& 0,0993\pi 
+
 \end{array}
 \end{equation}
 \end{minipage}
