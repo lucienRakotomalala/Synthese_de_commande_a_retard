@@ -45,3 +45,28 @@ Résultat logique, bien qu'il existe des correcteurs avec un gain admis de mani�
 C(p) = 0.0925
 \end{equation}
 \end{itemize}
+
+\section{Analyse stabilité, ajout d'une perturbation}
+Nous avons prouvé, par construction du correcteur, que le système était asymptotiquement stable. Cependant, nous avons omis plusieurs hypothèse que nous allons analyser maintenant.
+
+ 
+Il a été noté dans le cahier des charges l'ajout d'une perturbation sur la commande $u(t)$(voir schéma\ref{fig:sch_predicteurSmith}). Cette perturbation, de type échelon, ne doit pas déstabiliser le système. Nous allons étudier le transfert entre cette perturbation et la sortie du système. Cette étude a déjà été commencé au cours des cours/TD, elle est exprimé par \begin{equation}
+\frac{Y(p)}{P_pert(p)}=\frac{G(p)e^{-hp}\left(1+G(p)\left(1-e^{-hp}\right)C(p)\right)}{1+G(p)\left(1-e^{-hp}\right)C(p)+G(p)e^{-hp}C(p)}
+\end{equation}
+
+\section{Simulation \emph{Matlab} et observation des résultats}
+Nous avons pu simuler sur \emph{Matlab} la réponse à un échelon de position que vous trouverez en figure \ref{fig:rep_echeonSmith}.\begin{figure}[!ht]
+\centering
+\includegraphics[width = .7\textwidth]{./IV/images/rep_echelonSmith.pdf}
+\caption{Réponse à un échelon unité en BF avec un Préditeur de Smith}\label{fig:rep_echeonSmith}
+\end{figure}
+
+Toute les attentes du cahier des charges ont été remplis pour cette partie, nous avons validé la simulation de cette commande.
+
+\section{Changement du retard} 
+Pour observer une partie de la robustesse du système, nous avons modifier radicalement la valeur du retard du système. Nous avons choisi une valeur hors des valeurs admises dans les partis de modélisation du procédé en boucle ouverte ou avec un correcteur Proportionnel dérivateur, pour voir si la stabilité du système était respecté. Nous avons obtenu la courbe \ref{fig:rep_echeonSmith5}. \begin{figure}[!ht]
+\centering
+\includegraphics[width = .7\textwidth]{./IV/images/rep_echelonSmith_h5.pdf}
+\caption{Réponse à un échelon unité en BF avec un Préditeur de Smith et un retard $h=5s$}\label{fig:rep_echeonSmith5}
+\end{figure}
+Nous voyons que le système réponds toujours au cahier des charges, résultat logique car le transfert en boucle fermé n'a pas de quasi polynôme caractéristique
