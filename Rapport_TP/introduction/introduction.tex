@@ -1,9 +1,9 @@
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
 \label{chap:Intro}
-Dans ce Travaux pratique du module \emph{Systèmes à retards}, nous avons réalisé l'étude d'une commande sur un procédé electro-magnétique. Cette étude vise à implémenter plusieurs correcteur étudié au cours de notre cursus et pendant les cours/TD. Ces sysnthèse de commande utiliseront les théories établis autour des systèmes  retards et seront autour de cette problématique.
+Dans ce Travaux pratique du module \emph{Systèmes à retards}, nous avons réalisé l'étude d'une commande sur un procédé electro-magnétique. Cette étude vise à implémenter plusieurs correcteur étudié au cours de notre cursus et pendant les cours/TD. Ces synthèse de commande utiliseront les théories établis autour des systèmes  retards et seront autour de cette problématique.
 
-Nous avons pour la créatin de cette commande, un chier des charges bien fourni que nous avons obtenu  partir de l'énoncé :
+Nous avons pour la création de cette commande, un chier des charges bien fourni que nous avons obtenu  partir de l'énoncé :
 \begin{itemize}
 \item Il faut réaliser un asservissement en position angulaire.
 \item Il faut atteindre la consigne en moins de 8 secondes. $\Rightarrow T_r<8s + h $
@@ -12,3 +12,8 @@ Nous avons pour la créatin de cette commande, un chier des charges bien fourni 
 \item Il doit y avoir une erreur de position nulle. $ t\rightarrow \infty, V_g(t) \rightarrow V_{ref}(t)$
 \item La commande doit rejeter Les perturbations de sortie de type échelon ($p(t)=p_0$) en maximum 3 secondes.
 \end{itemize}
+
+Dans un premier temps, nous allons établir la une série de modèle du procédé, en utilisant nos connaissances antérieure du procédé et de l'automatique et les nouvelles connaissance autour des systèmes à retards.
+
+
+Ensuite, nous établirons un premier correcteur Proportionnel dérivateur, puis un spectre fini pour finir sur un prédicteur de Smith.
