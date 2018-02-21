@@ -146,7 +146,66 @@ Nous avons comparé les réponses entres les deux modélisations afin de vérifi
 Nous pouvons constater que l'erreur est négligeable et doit être dût à du bruit numérique et/ou à la méthode de calcul de la réponse. Nos modèles sont donc équivalents par rapport à une réponse à un échelon unité.
 	\section{Commandabilité et observabilité}
 
-Nous allons maintenant étudier l'observabilité et la commandabilité de notre modèle. Nous utiliserons, pour cela, le modèle espace d'état et matlab pour résoudre ce point. Nous avons vérifié que le rang de la matrice de commandabilité et de celle d'observabilité sont bien égaux à la dimension de $A$. Ces calculs nous permettent de conclure que le système est observable et commandable.
+Nous allons maintenant étudier l'observabilité et la commandabilité de notre modèle et l'influence du retard sur ces propriétés. Nous utiliserons, pour cela, le modèle espace d'état où nous exprimerons le retard grâce à $\nabla$ dans le modèle espace d'état. 
+\begin{equation}
+\left\lbrace
+\begin{array}{lclcl}
+\dot{x}(t) 
+&=&
+\begin{pmatrix}
+0 & k_g\\
+0 & -\frac{1}{\tau_m} 
+\end{pmatrix}
+x(t)
+&+&
+\begin{pmatrix}
+0 \\
+\nabla \frac{k_m}{\tau_m}
+\end{pmatrix}
+u(t)\\
+&&&&\\
+y(t)
+&=&
+\begin{pmatrix}
+0	&	k_g\\
+k_s 	&	0
+\end{pmatrix}
+x(t) 
+&&
+\end{array}\right.
+\end{equation}
+Nous avons ensuite calculer les matrices de commandabilité et d'observabilité, respectivement :
+\begin{equation}
+\begin{array}{lclcl}
+\mathcal{C} &=& \begin{bmatrix}
+B & AB 
+\end{bmatrix}
+&=&
+\begin{bmatrix}
+0 	&	\frac{k_m*k_r*\nabla}{\tau_m}  \\
+\frac{k_m*\nabla}{\tau_m}	& -\frac{k_m*\nabla}{\tau_m^2}
+\end{bmatrix}
+\\
+&&&&\\
+
+\mathcal{O} &=& \begin{bmatrix}
+C \\
+CA 
+\end{bmatrix}
+&=&
+\begin{bmatrix}
+0	&	k_g\\
+k_s &	0\\
+0	& -\frac{k_g}{\tau_m}\\
+0	&    k_r*k_s
+\end{bmatrix}
+\end{array}
+\end{equation}
+
+Nous avons vérifié que le rang de la matrice de commandabilité et de celle d'observabilité sont bien égaux à la dimension de $A$. Si cette condition est respectée et qu'il n'y a pas de $\nabla$ dans la matrice, la propriété (commandabilité ou observabilité) est qualifiée de forte. Dans le cas où, en plus d'être de bon rang, il y a $\nabla$ dans la matrice de commandabilité ou d'observabilité, la propriété est dite faible (car dépend du retard). Dans notre cas, $\mathcal{C}$ est de rang égal à la dimension de $A$ et contient $\nabla$, donc le système est faiblement commandable. Pour $\mathcal{O}$, On peut remarquer qu'il n'y a pas de $\nabla$ et que le rang est égal à la dimension de $A$, donc le système est fortement observable.
+
+
+
 	\section{Analyse de la boucle ouverte}
 Nous allons maintenant étudier les performances de notre système. Nous avons choisi d'étudier les performances sur la sortie $V_g(t)$. 
 Toujours à l'aide de matlab, nous avons obtenu les performances suivantes : 
@@ -157,8 +216,34 @@ Toujours à l'aide de matlab, nous avons obtenu les performances suivantes :
 \item[Gain statique :] $G_{stat}= 1.05$. Il y a donc un dépassement de $0,05$ soit de $5\%$.	
 \end{description}	
 	\section{Stabilité de la boucle fermée}
-	Est-ce bien ces deux méthodes ? (la troisième méthode supposée étant le pseudo-retard non traité en cours)
+Nous allons maintenant étudier la stabilité de la boucle fermée par deux méthodes : le \emph{Delay-sweeping} et l'étude de la \emph{stabilité 2D}. Avant cela, nous allons donner les fonctions de transferts en boucle fermée du système. 
+[equations a faire. ]
+\begin{equation}
+\left\lbrace
+\begin{array}{lcl}
+\frac{V_s()}{u_m(t)}	&=&	\frac{1}{3}\\
+\frac{V_g()}{u_m(t)}	&=&	\frac{1}{3}
+\end{array}
+\right.
+\end{equation}
+
+\begin{figure}[!ht]
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=.8\textwidth]{./I/images/BFsimple_simulink.pdf}
+\caption{\label{fig:simulink_BFsimple}Modèle SIMULINK du système en boucle fermé sans correcteur.}
+\end{minipage}\hfill
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=.8\textwidth]{./I/images/BFsimple_plot.pdf}
+\caption{\label{fig:plot_	BFsimple}Tracé de la réponse à un échelon unité du système en boucle fermé sans correcteur.}
+\end{minipage}
+\end{figure}
 		\subsection{Delay-Sweeping}
+
+
+		
 		\subsection{Stabilité 2D}
+		
 
 

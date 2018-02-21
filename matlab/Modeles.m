@@ -110,3 +110,21 @@ end
  
 disp('Le modèle est observable (1/0) :')    
  disp(rank(obsv(m.ee))==length(m.A))     
+%% Boucle fermée simple 
+
+if (NOGRAPH ~=1)
+    %%
+   figure(7)
+        plot(simout.time,simout.signals.values(:,1), ... ref
+             simout.time,simout.signals.values(:,2),... Vg
+             simout.time,simout.signals.values(:,3));%Vs
+        legend('V_{ref}(t)','V_g(t)','V_s(t)')
+        title('Systeme en boucle fermé')
+        grid on
+    
+    
+end
+
+
+ 
+ 
